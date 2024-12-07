@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartGrow Rwanda</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="project-name">
+                <h1>SmartGrow Rwanda</h1>
+            </div>
+            <nav>
+                <div class="menu-icon" id="menu-icon">
+                    &#9776; <!-- Hamburger icon -->
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#status">Farm Status</a></li>
+                    <li><a href="#irrigation">Irrigation Control</a></li>
+                    <li><a href="#marketplace">Marketplace</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#notifications">Notifications</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section id="home">
+            <a href="dashboard.html" class="container-link">
+                <div class="container">
+                    <h2>Dashboard</h2>
+                    <div id="overview">
+                        <!-- Farm Status Summary -->
+                        <div class="status-summary">
+                            <h3>Farm Status</h3>
+                            <p>Moisture Level: <span id="moisture-level">75%</span></p>
+                            <p>Temperature: <span id="temperature">22°C</span></p>
+                            <p>Humidity: <span id="humidity">60%</span></p>
+                        </div>
+                        <!-- Recent Notifications -->
+                        <div class="recent-notifications">
+                            <h3>Recent Notifications</h3>
+                            <ul id="notification-list">
+                                <li>Automatic irrigation triggered at 10:00 AM</li>
+                                <li>Soil moisture low at 8:00 AM</li>
+                                <li>Temperature alert: 35°C at 2:00 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </section>
+        
+        <section id="status">
+            <a href="#details" class="container-link">
+                <div class="container">
+                    <h2>Farm Status</h2>
+                    <div class="status-details">
+                        <!-- Example data, link entire container -->
+                        <p>Moisture level: 75%</p>
+                        <p>Temperature: 22°C</p>
+                        <p>Humidity: 60%</p>
+                    </div>
+                </div>
+            </a>
+        </section>
+        
+        <section id="irrigation">
+            <a href="#details" class="container-link">
+                <div class="container">
+                    <h2>Irrigation Control</h2>
+                    <div id="irrigation-control">
+                        <button id="irrigate-button">Irrigate Now</button>
+                        <p>Status: <span id="irrigation-status">Off</span></p>
+                    </div>
+                </div>
+            </a>
+        </section>
+        
+        <section id="marketplace">
+            <a href="#details" class="container-link">
+                <div class="container">
+                    <h2>Marketplace</h2>
+                    <div id="harvest-listings">
+                        <!-- Example product listings -->
+                        <div class="listing">
+                            <h3>Tomatoes</h3>
+                            <p>Price: $2/kg</p>
+                            <p>Available: 100 kg</p>
+                        </div>
+                        <div class="listing">
+                            <h3>Carrots</h3>
+                            <p>Price: $1.5/kg</p>
+                            <p>Available: 50 kg</p>
+                        </div>
+                    </div>
+                    <button id="add-listing-button">Add New Listing</button>
+                </div>
+            </a>
+        </section>
+        
+        <section id="news">
+            <a href="#details" class="container-link">
+                <div class="container">
+                    <h2>News & Trends</h2>
+                    <div id="news-feed">
+                        <!-- Example news articles -->
+                        <article>
+                            <h3>Latest Farming Innovations</h3>
+                        </article>
+                        <article>
+                            <h3>Top 10 Tips for Better Crop Yield</h3>
+                        </article>
+                    </div>
+                </div>
+            </a>
+        </section>
+        
+        <section id="notifications">
+            <a href="#details" class="container-link">
+                <div class="container">
+                    <h2>Notifications</h2>
+                    <div id="notifications-list">
+                        <!-- Example notifications -->
+                        <p>Automatic irrigation triggered at 10:00 AM</p>
+                        <p>Soil moisture low at 8:00 AM</p>
+                        <p>Temperature alert: 35°C at 2:00 PM</p>
+                    </div>
+                </div>
+            </a>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 SmartGrow Rwanda</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

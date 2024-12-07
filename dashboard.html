@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartGrow Rwanda - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="project-name">
+                <h1><a href="./Index.html">SmartGrow Rwanda</a></h1> <!-- Link to home -->
+            </div>
+            <nav>
+                <div class="menu-icon" id="menu-icon">
+                    &#9776; <!-- Hamburger icon -->
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#status">Farm Status</a></li>
+                    <li><a href="index.html#irrigation">Irrigation Control</a></li>
+                    <li><a href="index.html#marketplace">Marketplace</a></li>
+                    <li><a href="index.html#news">News</a></li>
+                    <li><a href="index.html#notifications">Notifications</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section id="dashboard-details">
+            <div class="container">
+                <h2>Dashboard Details</h2>
+                
+                <div class="status-summary">
+                    <h3>Farm Status</h3>
+                    <p>Moisture Level: 75%</p>
+                    <p>Temperature: 22°C</p>
+                    <p>Humidity: 60%</p>
+                </div>
+                
+                <div class="recent-notifications">
+                    <h3>Recent Notifications</h3>
+                    <ul id="notification-list">
+                        <li>Automatic irrigation triggered at 10:00 AM</li>
+                        <li>Soil moisture low at 8:00 AM</li>
+                        <li>Temperature alert: 35°C at 2:00 PM</li>
+                    </ul>
+                </div>
+
+                <!-- Irrigation Control -->
+                <div class="irrigation-control">
+                    <h3>Irrigation Control</h3>
+                    <button id="manual-irrigate-button">Manual Irrigation</button>
+                    <label>
+                        <input type="checkbox" id="auto-irrigation-switch">
+                        Automatic Irrigation
+                    </label>
+                    <p>Status: <span id="irrigation-status">Off</span></p>
+                </div>
+
+                <!-- Water Usage Details -->
+                <div class="water-usage">
+                    <h3>Daily Water Usage</h3>
+                    <p>Water used today: 500 liters</p>
+                    <p>Water used this week: 3500 liters</p>
+                    <p>Water used this month: 15000 liters</p>
+                    <canvas id="waterUsageChart"></canvas>
+                </div>
+
+                <!-- Data Visualizations -->
+                <div class="data-visualizations">
+                    <h3>Data Visualizations</h3>
+                    <img src="placeholder-graph.png" alt="Placeholder for data graph">
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 SmartGrow Rwanda</p>
+    </footer>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const ctx = document.getElementById('waterUsageChart').getContext('2d');
+        const waterUsageChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                datasets: [{
+                    label: 'Daily Water Usage (liters)',
+                    data: [450, 500, 520, 480, 460, 510, 500],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const manualIrrigateButton = document.getElementById('manual-irrigate-button');
+        const autoIrrigationSwitch = document.getElementById('auto-irrigation-switch');
+        const irrigationStatus = document.getElementById('irrigation-status');
+
+        manualIrrigateButton.addEventListener('click', () => {
+            irrigationStatus.textContent = 'On (Manual)';
+            setTimeout(() => {
+                irrigationStatus.textContent = 'Off';
+            }, 5000); // Simulate 5 seconds of irrigation
+        });
+
+        autoIrrigationSwitch.addEventListener('change', () => {
+            if (autoIrrigationSwitch.checked) {
+                irrigationStatus.textContent = 'On (Automatic)';
+            } else {
+                irrigationStatus.textContent = 'Off';
+            }
+        });
+    });
+    </script>
+</body>
+</html>
